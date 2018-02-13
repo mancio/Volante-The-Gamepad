@@ -24,3 +24,5 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
 This project is focused to design a new kind of joystick that make pleasant the racing and flight simulation gaming experience.
 The joystick will provide a slider linear potentiometer (throttle/brake), two knobs potentiometers (up/down - left/right) and 15 buttons
 The difference from the past is the presence of _linear potentiometers_ that give the possibility to the player to be absolutely precice with the movements.
+
+prova
