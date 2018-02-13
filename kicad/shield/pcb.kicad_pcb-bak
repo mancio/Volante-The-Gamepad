@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.6)
+(kicad_pcb (version 4) (host pcbnew 4.0.7)
 
   (general
     (links 34)
@@ -278,12 +278,12 @@
     )
   )
 
-  (module Capacitors_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm (layer F.Cu) (tedit 5A81921F) (tstamp 5A807652)
-    (at 115.57 105.41)
+  (module Capacitors_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm (layer F.Cu) (tedit 5A830A07) (tstamp 5A807652)
+    (at 106.68 106.68)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 5mm width 2.5mm Capacitor")
     (path /5A7C7C31)
-    (fp_text reference C3 (at 5.715 -0.635) (layer F.SilkS)
+    (fp_text reference C3 (at 1.27 -2.54) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 0.01uF (at 1.25 2.56) (layer F.SilkS)
@@ -394,14 +394,14 @@
     (pad 12 thru_hole circle (at 0 27.94) (size 2 2) (drill 0.95) (layers *.Cu *.Mask)
       (net 11 "Net-(J1-Pad12)"))
     (model ${KISYS3DMOD}/Connectors_Samtec.3dshapes/SL-112-X-XX_1x12.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 1 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
     (model Socket_Strips.3dshapes/Socket_Strip_Straight_1x12_Pitch2.54mm.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 -0.55 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 

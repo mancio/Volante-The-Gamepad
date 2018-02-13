@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.6)
+(kicad_pcb (version 4) (host pcbnew 4.0.7)
 
   (general
     (links 34)
@@ -394,14 +394,14 @@
     (pad 12 thru_hole circle (at 0 27.94) (size 2 2) (drill 0.95) (layers *.Cu *.Mask)
       (net 11 "Net-(J1-Pad12)"))
     (model ${KISYS3DMOD}/Connectors_Samtec.3dshapes/SL-112-X-XX_1x12.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 1 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
     (model Socket_Strips.3dshapes/Socket_Strip_Straight_1x12_Pitch2.54mm.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 -0.55 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -487,6 +487,11 @@
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
+    )
+    (model Socket_Strips.3dshapes/Socket_Strip_Angled_1x12_Pitch2.54mm.wrl
+      (at (xyz 0 -0.55 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 90 0))
     )
   )
 
