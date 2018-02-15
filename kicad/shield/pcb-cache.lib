@@ -34,10 +34,10 @@ $FPLIST
 $ENDFPLIST
 DRAW
 T 0 -100 550 60 0 0 0 10 Normal 0 C C
-T 0 -100 -150 60 0 0 0 12 Normal 0 C C
 T 0 -100 350 60 0 0 0 14 Normal 0 C C
 T 0 -100 250 60 0 0 0 15 Normal 0 C C
 T 0 -100 450 60 0 0 0 16 Normal 0 C C
+T 0 -100 -150 60 0 0 0 21 Normal 0 C C
 T 0 -100 150 60 0 0 0 A0 Normal 0 C C
 T 0 -100 50 60 0 0 0 A1 Normal 0 C C
 T 0 -100 -50 60 0 0 0 A2 Normal 0 C C

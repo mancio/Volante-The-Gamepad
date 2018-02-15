@@ -193,8 +193,6 @@ long mapper(long m){
 
 void setup() {
 
-  DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
-
   // start joystick library and set axis range
   joy_conf();
 
@@ -217,25 +215,26 @@ void loop() {
 
     if(debouncer(button_array[i]) == LOW){
 
-      Joystick.setButton(i, HIGH);
+      //Joystick.setButton(i, HIGH);
       
     }else{
 
-      Joystick.setButton(i, LOW);
+      //Joystick.setButton(i, HIGH);
       
     }
        
   }
 
 
-  Joystick.setXAxis(mapper(analogRead(st)));
-  Joystick.setYAxis(mapper(analogRead(alt)));
-  Joystick.setZAxis(mapper(analogRead(gas)));
+  //Joystick.setXAxis(mapper(analogRead(st)));
+  //Joystick.setYAxis(mapper(analogRead(alt)));
+ //Joystick.setZAxis(mapper(analogRead(gas)));
 
   
 
 
-  
+  TXLED0;
+  RXLED0;
   
     
   

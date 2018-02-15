@@ -10180,7 +10180,7 @@ Text GLabel 3100 1630 0    39   BiDi ~ 0
 Text GLabel 3100 1730 0    39   BiDi ~ 0
 15
 Text GLabel 3100 2130 0    39   BiDi ~ 0
-12
+21
 $Comp
 L GND #PWR02
 U 1 1 5A7C7797
@@ -10193,7 +10193,7 @@ F 3 "" H 8020 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7900 2880 2    39   Input ~ 0
-12
+21
 Text GLabel 7900 2780 2    39   Input ~ 0
 A2
 Text GLabel 7900 2680 2    39   Input ~ 0
@@ -10369,7 +10369,7 @@ U 1 1 5A832FA1
 P 3130 3560
 F 0 "R1" H 3240 3560 50  0000 C CNN
 F 1 "82 Ohm" H 2920 3570 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal" V 3060 3560 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3060 3560 50  0001 C CNN
 F 3 "" H 3130 3560 50  0001 C CNN
 	1    3130 3560
 	1    0    0    -1  
