@@ -10363,17 +10363,6 @@ F 3 "" H 3130 5000 50  0001 C CNN
 	1    3130 5000
 	1    0    0    -1  
 $EndComp
-$Comp
-L R R1
-U 1 1 5A832FA1
-P 3130 3560
-F 0 "R1" H 3240 3560 50  0000 C CNN
-F 1 "82 Ohm" H 2920 3570 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3060 3560 50  0001 C CNN
-F 3 "" H 3130 3560 50  0001 C CNN
-	1    3130 3560
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3130 3710 3130 4000
 Wire Wire Line
@@ -10388,8 +10377,6 @@ Wire Wire Line
 Wire Wire Line
 	3600 4610 3130 4610
 Connection ~ 3130 4610
-Wire Wire Line
-	2900 2230 2900 3410
 Wire Wire Line
 	2900 3410 3130 3410
 $Bitmap
@@ -36995,4 +36982,30 @@ F4 82 E8 3C 06 74 06 68 61 21 04 00 80 57 C3 42 08 F7 A5 57 01 1B F6 41 67 78 39
 46 49 A6 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
+$Comp
+L R_Variable R2
+U 1 1 5A8745C0
+P 3130 3560
+F 0 "R2" H 3270 3510 50  0000 L CNN
+F 1 "2 kOhm" H 3270 3640 50  0000 L CNN
+F 2 "Potentiometers:Potentiometer_Triwood_RM-065" V 3060 3560 50  0001 C CNN
+F 3 "" H 3130 3560 50  0001 C CNN
+	1    3130 3560
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5A879F6C
+P 2900 3090
+F 0 "R1" H 3010 3090 50  0000 C CNN
+F 1 "100 Ohm" H 3140 2980 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2830 3090 50  0001 C CNN
+F 3 "" H 2900 3090 50  0001 C CNN
+	1    2900 3090
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 2230 2900 2940
+Wire Wire Line
+	2900 3240 2900 3410
 $EndSCHEMATC
