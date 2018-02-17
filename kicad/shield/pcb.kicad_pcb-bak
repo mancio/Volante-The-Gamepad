@@ -3,7 +3,7 @@
   (general
     (links 35)
     (no_connects 0)
-    (area 88.799999 60.859999 137.895001 110.590001)
+    (area 76.565002 52.14 142.907143 122.080001)
     (thickness 1.6)
     (drawings 55)
     (tracks 85)
@@ -83,11 +83,11 @@
       (plotinvisibletext false)
       (padsonsilk false)
       (subtractmaskfromsilk false)
-      (outputformat 4)
+      (outputformat 1)
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory C:/Users/mancio/Downloads/kicad-20180211T124749Z-001/kicad/shield/))
+      (outputdirectory C:/Users/mancio/Documents/GitHub/Volante-The-Gamepad/kicad/shield/gerber/))
   )
 
   (net 0 "")
