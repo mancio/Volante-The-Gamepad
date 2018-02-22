@@ -36,9 +36,9 @@
  *  NINE = 8
  *  TEN = 9
  *  ELEVEN = 10
- *  TWELVE = 14
- *  THIRTEEN = 15
- *  FOURTEEN = 16
+ *  TWELVE = 14 need a 10k pull-up resistor
+ *  THIRTEEN = 15 need a 10k pull-up resistor
+ *  FOURTEEN = 16 need a 10k pull-up resistor
  *  FIFTEEN = 21 / A3
  *  
  *  
@@ -47,6 +47,10 @@
  *  A0 = A0
  *  A1 = A1
  *  A2 = A2
+ *  
+ *  If potentiometers don't work properly probably 
+ *  they are dirty inside. Open the metal cover and clean
+ *  the part between the grafite and the brush
  *  
  *  
  */
@@ -107,8 +111,8 @@ int thirteen = 15;
 int fourteen = 16;
 int fifteen = 21;
 
-// the total number of digital buttons (starting from 1)
-int el_num = 15; 
+// the total number of digital buttons (starting from 0)
+int el_num = 14; 
 
 // buttons array values
 int button_array[] = {one,two,three,four,five,six,seven,eight,
@@ -174,6 +178,8 @@ void joy_conf(){
 
 void button_conf(){
 
+  
+  
   // Initialize Button switch Pins
 
   for(int i=0; i <= el_num; i++){
@@ -181,6 +187,14 @@ void button_conf(){
     pinMode(button_array[i], INPUT_PULLUP);
   
   }
+
+  /* the SPI pins don't have internal pull-up resistor 
+   * please connect a 10K resistor between pin 14, 15 ,16
+   * and VCC 
+   */
+  //pinMode(twelve,INPUT);
+  //pinMode(thirteen,INPUT);
+  //pinMode(fourteen,INPUT);
   
 
 }
@@ -205,8 +219,7 @@ void setup() {
   // set buttons PULLUP
   button_conf(); 
 
-  // insert 14 buttons in the array
-  //pop_buttons();
+  
   
 }
 
@@ -227,22 +240,15 @@ void loop() {
 
       Joystick.setButton(i, LOW);
       
-    }
-       
-  }
+     }
 
+    }
+
+  
+  
 
   Joystick.setXAxis(mapper(analogRead(st)));
   Joystick.setYAxis(mapper(analogRead(alt)));
   Joystick.setZAxis(mapper(analogRead(gas)));
-
-  
-
-
-  
-  
-    
-  
-    
 
 }
