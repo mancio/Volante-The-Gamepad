@@ -107,8 +107,11 @@ int thirteen = 15;
 int fourteen = 16;
 int fifteen = 21;
 
+// the total number of digital buttons (starting from 1)
+int el_num = 15; 
+
 // buttons array values
-int button_array[15] = {one,two,three,four,five,six,seven,eight,
+int button_array[] = {one,two,three,four,five,six,seven,eight,
                         nine,ten,eleven,twelve,thirteen,fourteen,fifteen};
                         
 // steering and gas-brake potentiometers
@@ -173,7 +176,7 @@ void button_conf(){
 
   // Initialize Button switch Pins
 
-  for(int i=0; i <= sizeof(button_array) - 1; i++){
+  for(int i=0; i <= el_num; i++){
     
     pinMode(button_array[i], INPUT_PULLUP);
   
@@ -214,7 +217,7 @@ void loop() {
   
   
   // check every digital button
-  for(int i=0; i <= sizeof(button_array) - 1; i++){
+  for(int i=0; i <= el_num; i++){
 
     if(debouncer(button_array[i]) == LOW){
 
