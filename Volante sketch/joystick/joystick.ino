@@ -36,9 +36,9 @@
  *  NINE = 8
  *  TEN = 9
  *  ELEVEN = 10
- *  TWELVE = 14 need a 10k pull-up resistor
- *  THIRTEEN = 15 need a 10k pull-up resistor
- *  FOURTEEN = 16 need a 10k pull-up resistor
+ *  TWELVE = 14 
+ *  THIRTEEN = 15 
+ *  FOURTEEN = 16 
  *  FIFTEEN = 21 / A3
  *  
  *  
@@ -188,13 +188,10 @@ void button_conf(){
   
   }
 
-  /* the SPI pins don't have internal pull-up resistor 
-   * please connect a 10K resistor between pin 14, 15 ,16
-   * and VCC 
-   */
-  //pinMode(twelve,INPUT);
-  //pinMode(thirteen,INPUT);
-  //pinMode(fourteen,INPUT);
+  
+
+  
+  
   
 
 }
@@ -251,4 +248,4 @@ void loop() {
   Joystick.setYAxis(mapper(analogRead(alt)));
   Joystick.setZAxis(mapper(analogRead(gas)));
 
-}
+} 
