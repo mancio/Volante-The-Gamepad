@@ -248,26 +248,25 @@ void loop() {
 
     if(debouncer(button_array[i]) == LOW && cap[i] == false){
 
-      Joystick.setButton(i, HIGH);
+      Joystick.setButton(i,HIGH);
       
-    }else{
+    }else if(debouncer(button_array[i]) == HIGH && cap[i] == false){
 
-      Joystick.setButton(i, LOW);
+      Joystick.setButton(i,LOW);
       
-    }
+    }else if(debouncer(button_array[i]) == LOW && cap[i] == true){
 
-    if(debouncer(button_array[i]) == LOW && cap[i] == true){
-
-      Joystick.setButton(i, LOW);
+      Joystick.setButton(i,LOW);
       
-    }else{
+    }else if(debouncer(button_array[i]) == HIGH && cap[i] == true){
 
-      Joystick.setButton(i, HIGH);
+      Joystick.setButton(i,HIGH);
       
     }
+  }
     
 
-  }
+  
 
   
   
