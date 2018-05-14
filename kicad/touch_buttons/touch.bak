@@ -75,21 +75,27 @@ F 3 "" H 6950 4280 50  0001 C CNN
 	1    6950 4280
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7030 3900 6950 3900
-Wire Wire Line
-	6950 3900 6950 4280
 $Comp
-L R R?
+L R 2M
 U 1 1 5AFBC9A2
 P 6690 3700
-F 0 "R?" V 6770 3700 50  0000 C CNN
+F 0 "2M" V 6770 3700 50  0000 C CNN
 F 1 "R" V 6690 3700 50  0000 C CNN
 F 2 "" V 6620 3700 50  0001 C CNN
 F 3 "" H 6690 3700 50  0001 C CNN
 	1    6690 3700
 	0    1    1    0   
 $EndComp
+Text Notes 7320 3710 0    47   ~ 0
+VCC
+Text Notes 7320 3810 0    47   ~ 0
+IN
+Text Notes 7320 3930 0    47   ~ 0
+GND
+Wire Wire Line
+	7030 3900 6950 3900
+Wire Wire Line
+	6950 3900 6950 4280
 Wire Wire Line
 	7030 3700 6840 3700
 Wire Wire Line
@@ -99,7 +105,31 @@ Wire Wire Line
 Wire Wire Line
 	6880 3830 6410 3830
 Wire Wire Line
-	6410 3830 6410 3700
+	6410 3830 6410 3050
 Wire Wire Line
 	6410 3700 6540 3700
+Wire Wire Line
+	6410 3050 6150 3050
+Connection ~ 6410 3700
+Wire Wire Line
+	5950 3050 5670 3050
+Wire Wire Line
+	5670 3050 5670 4150
+Wire Wire Line
+	5670 4150 6950 4150
+Connection ~ 6950 4150
+Wire Notes Line
+	6060 2900 6060 2730
+Wire Notes Line
+	6060 2730 6440 2730
+Text Notes 6460 2760 0    47   ~ 0
+Finger
+Wire Notes Line
+	5950 2900 6180 2900
+Wire Notes Line
+	5950 2900 5950 3180
+Wire Notes Line
+	5950 3180 6180 3180
+Wire Notes Line
+	6180 3180 6180 2900
 $EndSCHEMATC
