@@ -55,17 +55,6 @@ F 3 "" H 6050 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X03 J1
-U 1 1 5AFBC747
-P 7230 3800
-F 0 "J1" H 7230 4000 50  0000 C CNN
-F 1 "CONN_01X03" H 7380 3600 50  0000 C CNN
-F 2 "Touch_conn:touch_conn" H 7230 3800 50  0001 C CNN
-F 3 "" H 7230 3800 50  0001 C CNN
-	1    7230 3800
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR1
 U 1 1 5AFBC7A9
 P 6950 4280
@@ -76,20 +65,7 @@ F 3 "" H 6950 4280 50  0001 C CNN
 	1    6950 4280
 	1    0    0    -1  
 $EndComp
-$Comp
-L R 2M1
-U 1 1 5AFBC9A2
-P 6690 3700
-F 0 "2M1" V 6770 3700 50  0000 C CNN
-F 1 "R" V 6690 3700 50  0000 C CNN
-F 2 "Touch_conn:res" V 6620 3700 50  0001 C CNN
-F 3 "" H 6690 3700 50  0001 C CNN
-	1    6690 3700
-	0    1    1    0   
-$EndComp
-Text Notes 7320 3710 0    47   ~ 0
-VCC
-Text Notes 7320 3810 0    47   ~ 0
+Text Notes 7330 3830 0    47   ~ 0
 IN
 Text Notes 7320 3930 0    47   ~ 0
 GND
@@ -97,8 +73,6 @@ Wire Wire Line
 	7030 3900 6950 3900
 Wire Wire Line
 	6950 3900 6950 4280
-Wire Wire Line
-	7030 3700 6840 3700
 Wire Wire Line
 	7030 3800 6880 3800
 Wire Wire Line
@@ -108,10 +82,7 @@ Wire Wire Line
 Wire Wire Line
 	6410 3830 6410 3050
 Wire Wire Line
-	6410 3700 6540 3700
-Wire Wire Line
 	6410 3050 6150 3050
-Connection ~ 6410 3700
 Wire Wire Line
 	5950 3050 5670 3050
 Wire Wire Line
@@ -133,4 +104,15 @@ Wire Notes Line
 	5950 3180 6180 3180
 Wire Notes Line
 	6180 3180 6180 2900
+$Comp
+L CONN_01X02 J?
+U 1 1 5B018E1F
+P 7230 3850
+F 0 "J?" H 7230 4000 50  0000 C CNN
+F 1 "CONN_01X02" H 7310 3680 50  0000 C CNN
+F 2 "" H 7230 3850 50  0001 C CNN
+F 3 "" H 7230 3850 50  0001 C CNN
+	1    7230 3850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
