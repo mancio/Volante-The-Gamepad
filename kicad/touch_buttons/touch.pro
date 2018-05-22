@@ -1,4 +1,4 @@
-update=5/14/2018 2:29:50 PM
+update=22/05/2018 14:02:18
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -56,5 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-[general]
-version=1
+LibName30=C:/Users/mancio/Documents/GitHub/Volante-The-Gamepad/kicad/lib/my_lib

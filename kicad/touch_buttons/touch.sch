@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:my_lib
 LIBS:touch-cache
 EELAYER 25 0
 EELAYER END
@@ -49,7 +50,7 @@ U 1 1 5AF988CE
 P 6050 3050
 F 0 "JP1" H 6050 3129 50  0000 C CNN
 F 1 "touch" H 6060 2990 50  0000 C CNN
-F 2 "Touch_conn:touch_conn" H 6050 3050 50  0001 C CNN
+F 2 "Touch_conn:touch" H 6050 3050 50  0001 C CNN
 F 3 "" H 6050 3050 50  0001 C CNN
 	1    6050 3050
 	1    0    0    -1  
@@ -110,7 +111,7 @@ U 1 1 5B018E1F
 P 7230 3850
 F 0 "J1" H 7230 4000 50  0000 C CNN
 F 1 "CONN_01X02" H 7310 3680 50  0000 C CNN
-F 2 "Touch_conn:touch_face" H 7230 3850 50  0001 C CNN
+F 2 "Touch_conn:touch_conn" H 7230 3850 50  0001 C CNN
 F 3 "" H 7230 3850 50  0001 C CNN
 	1    7230 3850
 	1    0    0    -1  
