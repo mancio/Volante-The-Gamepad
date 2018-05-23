@@ -1,0 +1,62 @@
+(export (version D)
+  (design
+    (source C:/Users/mancio/Documents/GitHub/Volante-The-Gamepad/kicad/touch_buttons/touch.sch)
+    (date "22/05/2018 14:02:58")
+    (tool "Eeschema 4.0.7")
+    (sheet (number 1) (name /) (tstamps /)
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source touch.sch)
+        (comment (number 1) (value ""))
+        (comment (number 2) (value ""))
+        (comment (number 3) (value ""))
+        (comment (number 4) (value "")))))
+  (components
+    (comp (ref JP1)
+      (value touch)
+      (footprint Touch_conn:touch)
+      (libsource (lib device) (part Jumper_NO_Small))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5AF988CE))
+    (comp (ref J1)
+      (value CONN_01X02)
+      (footprint Touch_conn:touch_conn)
+      (libsource (lib touch-cache) (part CONN_01X02))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5B018E1F)))
+  (libparts
+    (libpart (lib touch-cache) (part CONN_01X02)
+      (footprints
+        (fp Pin_Header_Straight_1X*)
+        (fp Pin_Header_Angled_1X*)
+        (fp Socket_Strip_Straight_1X*)
+        (fp Socket_Strip_Angled_1X*))
+      (fields
+        (field (name Reference) J)
+        (field (name Value) CONN_01X02))
+      (pins
+        (pin (num 1) (name P1) (type passive))
+        (pin (num 2) (name P2) (type passive))))
+    (libpart (lib device) (part Jumper_NO_Small)
+      (description "Jumper, normally open")
+      (fields
+        (field (name Reference) JP)
+        (field (name Value) Jumper_NO_Small))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive)))))
+  (libraries
+    (library (logical touch-cache)
+      (uri C:\Users\mancio\Documents\GitHub\Volante-The-Gamepad\kicad\touch_buttons\touch-cache.lib))
+    (library (logical device)
+      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib")))
+  (nets
+    (net (code 1) (name GND)
+      (node (ref J1) (pin 2))
+      (node (ref JP1) (pin 1)))
+    (net (code 2) (name "Net-(J1-Pad1)")
+      (node (ref JP1) (pin 2))
+      (node (ref J1) (pin 1)))))
