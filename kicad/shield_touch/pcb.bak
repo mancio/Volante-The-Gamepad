@@ -38,7 +38,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Volante The Gamepad"
+Title "Volante The Gamepad - touch buttons version"
 Date "2018-02-12"
 Rev "1"
 Comp ""
@@ -37066,7 +37066,7 @@ U 1 1 5AFC87CD
 P 3860 5750
 F 0 "R12" V 3940 5750 50  0000 C CNN
 F 1 "2M" V 3860 5750 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3790 5750 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 3790 5750 50  0001 C CNN
 F 3 "" H 3860 5750 50  0001 C CNN
 	1    3860 5750
 	0    1    1    0   

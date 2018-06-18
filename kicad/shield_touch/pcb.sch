@@ -38,8 +38,8 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Volante The Gamepad"
-Date "2018-02-12"
+Title "Volante The Gamepad - touch buttons version"
+Date "2018-06-18"
 Rev "1"
 Comp ""
 Comment1 "the knob inputs are smoothed with capacitors"
