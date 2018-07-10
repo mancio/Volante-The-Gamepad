@@ -11,15 +11,18 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
 
 
 ### Directory structure
-[ArduinoJoystickLibrary-master](https://github.com/mancio/Volante-The-Gamepad/tree/master/ArduinoJoystickLibrary-master) - the Joystick library written by [Matthew Heironimus](https://github.com/MHeironimus)
+1. [ArduinoJoystickLibrary-master](https://github.com/mancio/Volante-The-Gamepad/tree/master/ArduinoJoystickLibrary-master) - the Joystick library written by [Matthew Heironimus](https://github.com/MHeironimus)
 
-[Fritzing](https://github.com/mancio/Volante-The-Gamepad/tree/master/Fritzing) - The Fritzing project with a prototype on breadbord.
+2. [Fritzing](https://github.com/mancio/Volante-The-Gamepad/tree/master/Fritzing) - The Fritzing project with a prototype on breadbord.
 
-[Picture](https://github.com/mancio/Volante-The-Gamepad/tree/master/Picture) - some pictures for the Fritzing draft and the building process
+3. [Picture](https://github.com/mancio/Volante-The-Gamepad/tree/master/Picture) - some pictures for the Fritzing draft and the building process
 
-[Volante sketch](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch) - the code
-
-[kicad](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad) - the Kicad scheme and PCB project.
+4. [Volante sketch](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch) - the code
+   - [joystick](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick) - the main code, the most tested. The sketch for the touch version of the Gamepad. The I/O pin are in PULLUP configuration. The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. 
+   
+   ![pad](https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG)
+  
+5. [kicad](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad) - the Kicad scheme and PCB project.
 
 ### Conclusion
 This project is focused to design a new kind of joystick that make pleasant the racing and flight simulation gaming experience.
