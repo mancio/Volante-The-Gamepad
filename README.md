@@ -20,7 +20,7 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
 4. [Volante sketch](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch) - the code
    - [joystick](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick) - the main code, the most tested. The sketch for the touch version of the Gamepad. The I/O pin are in PULLUP configuration. The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. The finger and each resistor on the shield should be considered as a voltage devider. Your body has an internal resistance of 100 KOhm so the resistors on the shield should be 2 MOhm. You can use [this](http://www.ohmslawcalculator.com/voltage-divider-calculator) voltage devider calculator to calculate the resistor. The Arduino pin mosfets are LOW state when the input is about <= 2.5V. If you use a less conductive item to close the contacts of the pad maybe you will have to raise the resistance up to 20MOhm
    
-   ![pad](https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG)
+   [pad](https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple)
   
 5. [kicad](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad) - the Kicad scheme and PCB project.
 
