@@ -31,12 +31,29 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
       <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG" width="200" height="200" />
       
       
-   - [joystick_cap](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick_cap) - the code for the joystick with the capacitive buttons. The TTP223 buttons go HIGH when pressed, the classic push normally open button go LOW when pressed. I not recomand to use the TTP223 for fast action and simulation games. The TTP223 sense a push by using an internal timer to feel the charge changing inside the capacitor. Due to this reason, it will reset after few second to LOW if keep pressed. The sensivity of the TTP223 is conditioned by the design of the touch button module and the object near it. It should switch to HIGH when not necessary giving a bad gaming experience. 
+   - [joystick_cap](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick_cap) - the code for the joystick with the capacitive buttons. The [TTP223](https://infusionsystems.com/support/TTP223.pdf) buttons go HIGH when pressed, the classic push normally open button go LOW when pressed. I not recomand to use the TTP223 for fast action and simulation games. The TTP223 sense a push by using an internal timer to feel the charge changing inside the capacitor. Due to this reason, it will reset after few second to LOW if keep pressed. The sensivity of the TTP223 is conditioned by the design of the touch button module and the object near it. It should switch to HIGH when not necessary giving a bad gaming experience. 
    
       <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/TTP223.PNG" width="200" height="200" />
    
   
+   - [pin_test](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/pin_test) - simple pin test on serial monitor
+  
+  
 5. [kicad](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad) - the Kicad scheme and PCB project.
+
+   - [buttons_layout](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/buttons_layout)
+   
+   - [buttons_layout_touch](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/buttons_layout_touch)
+   
+   - [lib](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/lib)
+   
+   - [shield](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/shield)
+   
+   - [shield_touch](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/shield_touch)
+   
+   - [touch_button_fancy](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_fancy)
+   
+   - [touch_button_simple](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_simple)
 
 ### Conclusion
 This project is focused to design a new kind of joystick that make pleasant the racing and flight simulation gaming experience.
