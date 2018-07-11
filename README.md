@@ -1,6 +1,14 @@
 # Volante-The-Gamepad
 The new revolutionary joystick for car and flight simulation games.
 
+&nbsp;
+
+<p align="center">
+<img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/out_box.jpg" width="550" height="400" />
+</p>   
+
+&nbsp;
+
 ### Software 
 The code use the famous libray ```Joystick.h```. You can find some sketches still in testing [here](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch).
 These are designed for the main project and for variants with different axis and buttons.
