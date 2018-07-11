@@ -23,7 +23,10 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
       <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG" width="200" height="200" />
       
       
-   - [joystick_cap](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick_cap) - the code for the joystick with the capacitive buttons. 
+   - [joystick_cap](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/joystick_cap) - the code for the joystick with the capacitive buttons. The TTP223 buttons go HIGH when pressed, the classic push normally open button go LOW when pressed. I not recomand to use the TTP223 for fast action and simulation games. The TTP223 sense a push by using an internal timer to feel the charge changing inside the capacitor. Due to this reason, it will reset after few second to LOW if keep pressed. The sensivity of the TTP223 is conditioned by the design of the touch button module and the object near it. It should switch to HIGH when not necessary giving a bad gaming experience. 
+   
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/TTP223.PNG" width="200" height="200" />
+   
   
 5. [kicad](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad) - the Kicad scheme and PCB project.
 
