@@ -78,6 +78,118 @@ Joystick_ Joystick(
 );
 
 
+struct BUTTON {
+
+  int number; // pin number in Arduino IDE
+  int pad; // number on gamepad
+  String pull; // pull-up, pull-down or float
+  boolean analog; // yes or no?
+};
+
+
+int wiring[18] = {
+
+   A2, // steering
+   A0, // alt
+   A1, // gas analogic potentiometers pins
+   
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   14,
+   15,
+   16,
+   21 // Arduino IDE pin number
+     
+};
+
+int binding[18] = {
+
+  999,
+  999,
+  999, // pots are not digital buttons
+
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15 // Arduino IDE pin number
+  
+};
+
+// "up" = pull-up, "down" = pull-down, "float" = float (not connected internally in case of extrenal pull resistors)
+String pull_mask[18] = {
+
+  "float",
+  "float",
+  "float", // potentiometers
+  
+  "down",
+  "down",
+  "down",
+  "down",
+  "down", // capacitive from button 1 to 5
+
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up" // push buttons from 6 to 15
+};
+
+boolean analog_mask[18] = {
+
+  true,
+  true,
+  true, // A0, A1 e A2
+
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false // digital buttons
+};
+
+
+BUTTON bt[18]; // generate 18 buttons
+
+// the total number of digital buttons (starting from 0)
+int el_num = 17;
+
+
 
 
 // Variables will change:
@@ -94,37 +206,9 @@ unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 
-// switch buttons
-int one = 0;
-int two = 1;
-int three = 2;
-int four = 3;
-int five = 4;
-int six = 5;
-int seven = 6;
-int eight = 7;
-int nine = 8;
-int ten = 9;
-int eleven = 10;
-int twelve = 14;
-int thirteen = 15;
-int fourteen = 16;
-int fifteen = 21;
 
-// the total number of digital buttons (starting from 0)
-int el_num = 14; 
 
-// buttons array values
-int button_array[] = {one,two,three,four,five,six,seven,eight,
-                        nine,ten,eleven,twelve,thirteen,fourteen,fifteen};
-                        
-// steering and gas-brake potentiometers
-int st = A2;
-int alt = A0;
-int gas = A1;
-
-//  potentiometers array value
-//int pot_array[st, alt, gas];
+ 
 
 
 
@@ -162,6 +246,24 @@ int debouncer(int button){
   
 }
 
+// initialize the buttons
+void bt_maker(){
+
+  for(int i=0; i<=el_num; i++){
+
+    bt[i].number = wiring[i];
+    bt[i].pad = binding[i];
+    bt[i].pull = pull_mask[i];
+    bt[i].analog = analog_mask[i];
+      
+  }
+  
+}
+
+
+
+
+
 // config the gamepad
 void joy_conf(){
 
@@ -183,15 +285,23 @@ void button_conf(){
   // Initialize Button switch Pins
 
   for(int i=0; i <= el_num; i++){
+
+    if(!bt[i].analog){
+      
+      if(bt[i].pull == "up"){
+
+        pinMode(bt[i].number, INPUT_PULLUP);
+        
+      }else if(bt[i].pull == "down" || bt[i].pull == "float"){
+
+        pinMode(bt[i].number, INPUT);
+        
+      }
+    }
     
-    pinMode(button_array[i], INPUT);
   
   }
-
-  
-
-  
-  
+   
   
 
 }
@@ -204,12 +314,22 @@ long mapper(long m){
 }
 
 
+void tester(){
+
+  
+  
+}
+
+
 
 
 void setup() {
 
   DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
 
+  // initialize buttons
+  bt_maker();
+  
   // start joystick library and set axis range
   joy_conf();
 
@@ -229,23 +349,43 @@ void loop() {
   // check every digital button
   for(int i=0; i <= el_num; i++){
 
-    if(debouncer(button_array[i]) == LOW){
+    if(bt[i].analog){
 
-      Joystick.setButton(i, HIGH);
+      Joystick.setXAxis(mapper(analogRead(bt[i].number)));
       
-    }else{
+    }else if( (!bt[i].analog && bt[i].pull == "up") || (!bt[i].analog && bt[i].pull == "float")){
 
-      Joystick.setButton(i, LOW);
+
+      if(debouncer(bt[i].number) == LOW){
+
+        Joystick.setButton(bt[i].pad, HIGH);
       
-     }
+      }else{
 
+        Joystick.setButton(bt[i].pad, LOW);
+      
+      }
+
+            
+    }else if(!bt[i].analog && bt[i].pull == "down"){
+
+      if(debouncer(bt[i].number) == LOW){
+
+        Joystick.setButton(bt[i].pad, LOW);
+      
+      }else{
+
+        Joystick.setButton(bt[i].pad, HIGH);
+      
+      }
+      
     }
 
-  
-  
+      
 
-  Joystick.setXAxis(mapper(analogRead(st)));
-  Joystick.setYAxis(mapper(analogRead(alt)));
-  Joystick.setZAxis(mapper(analogRead(gas)));
+    
+  }
+
+
 
 } 

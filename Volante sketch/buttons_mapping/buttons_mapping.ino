@@ -1,0 +1,233 @@
+/* Volante The Gamepad
+ *  
+ *  Joystick version - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
+ *  
+ *   This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *  
+ *  
+ *  https://github.com/MHeironimus/ArduinoJoystickLibrary
+ *  https://www.arduino.cc/en/Tutorial/Debounce
+ *  
+ *  mail: mancioman2@gmail.com
+ *  
+ *  
+ *  BUTTON CONFIGURATION
+ *  
+ *  --- BUTTONS ---
+ *  ONE = 0 / RX1
+ *  TWO = 1 / TX0
+ *  THREE = 2
+ *  FOUR = 3
+ *  FIVE = 4
+ *  SIX = 5
+ *  SEVEN = 6
+ *  EIGHT = 7
+ *  NINE = 8
+ *  TEN = 9
+ *  ELEVEN = 10
+ *  TWELVE = 14 
+ *  THIRTEEN = 15 
+ *  FOURTEEN = 16 
+ *  FIFTEEN = 21 / A3
+ *  
+ *  
+ *  --- AXIS ---
+ *  
+ *  A0 = A0
+ *  A1 = A1
+ *  A2 = A2
+ *  
+ *  If potentiometers don't work properly probably 
+ *  they are dirty inside. Open the metal cover and clean
+ *  the part between the grafite and the brush
+ *  
+ *  
+ */
+
+
+
+
+struct BUTTON {
+
+  int number; // pin number in Arduino IDE
+  int pad; // number on gamepad
+  String pull; // pull-up, pull-down or float
+  boolean analog; // yes or no?
+};
+
+
+int wiring[18] = {
+
+   A2, // steering
+   A0, // alt
+   A1, // gas analogic potentiometers pins
+   
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   14,
+   15,
+   16,
+   21 // Arduino IDE pin number
+     
+};
+
+int binding[18] = {
+
+  999,
+  999,
+  999, // pots are not digital buttons
+
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15 // Arduino IDE pin number
+  
+};
+
+// "up" = pull-up, "down" = pull-down, "float" = float (not connected internally in case of extrenal pull resistors)
+String pull_mask[18] = {
+
+  "float",
+  "float",
+  "float", // potentiometers
+  
+  "down",
+  "down",
+  "down",
+  "down",
+  "down", // capacitive from button 1 to 5
+
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up" // push buttons from 6 to 15
+};
+
+boolean analog_mask[18] = {
+
+  true,
+  true,
+  true, // A0, A1 e A2
+
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false // digital buttons
+};
+
+
+BUTTON bt[18]; // generate 18 buttons
+
+// the total number of digital buttons (starting from 0)
+int el_num = 17;
+
+
+
+
+
+
+
+// initialize the buttons
+void bt_maker(){
+
+  for(int i=0; i<=el_num; i++){
+
+    bt[i].number = wiring[i];
+    bt[i].pad = binding[i];
+    bt[i].pull = pull_mask[i];
+    bt[i].analog = analog_mask[i];
+      
+  }
+  
+}
+
+
+
+
+
+
+
+
+void tester(){
+
+  Serial.print("button map");
+
+  
+  
+}
+
+
+
+
+void setup() {
+
+  DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
+
+  Serial.begin(9600);
+
+  // initialize buttons
+  bt_maker();
+  
+   
+  
+}
+
+
+
+void loop() {
+  
+  
+  
+  
+
+
+
+} 
