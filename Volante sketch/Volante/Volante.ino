@@ -1,6 +1,10 @@
 /* Volante The Gamepad
  *  
- *  Joystick version - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
+ *  Multi Version - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
+ *  
+ *  Possibility to: 
+ *  - free assign the IDE pin number to the Button lib numbers
+ *  - use a mixing layout with simple pull-up touch, capacitive or classic push buttons
  *  
  *   This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -57,6 +61,10 @@
 
 #include <Joystick.h>
 
+// axes are int in the array mask
+#define X 997
+#define Y 998
+#define Z 999
 
 // joystick configuration
 Joystick_ Joystick(
@@ -113,9 +121,9 @@ int wiring[18] = {
 
 int binding[18] = {
 
-  999,
-  999,
-  999, // pots are not digital buttons
+  X, // steering
+  Y, // alt
+  Z, // gas analogic potentiometers pins
 
   1,
   2,
@@ -351,7 +359,19 @@ void loop() {
 
     if(bt[i].analog){
 
-      Joystick.setXAxis(mapper(analogRead(bt[i].number)));
+      switch(bt[i].pad){
+
+        case X:
+          Joystick.setXAxis(mapper(analogRead(bt[i].number)));
+
+        case Y:
+          Joystick.setYAxis(mapper(analogRead(bt[i].number)));
+
+        case Z:
+          Joystick.setZAxis(mapper(analogRead(bt[i].number)));
+          
+      }
+            
       
     }else if( (!bt[i].analog && bt[i].pull == "up") || (!bt[i].analog && bt[i].pull == "float")){
 

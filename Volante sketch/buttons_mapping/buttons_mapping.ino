@@ -1,6 +1,9 @@
 /* Volante The Gamepad
  *  
- *  Joystick version - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
+ *  Button configuration tester  - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
+ *  
+ *  Print on serial monitor the actual button configuration, usefull to configure the button array masks and export them to the main code.
+ *  Doesn't work as HID gamepad, show only text on Serial Monitor
  *  
  *   This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -55,7 +58,15 @@
  *  
  */
 
+// axes are int in the array mask
+#define X 997
+#define Y 998
+#define Z 999
 
+// print table times
+int pr_time = 1;
+
+int counter = 0;
 
 
 struct BUTTON {
@@ -93,9 +104,9 @@ int wiring[18] = {
 
 int binding[18] = {
 
-  999,
-  999,
-  999, // pots are not digital buttons
+  X,
+  Y,
+  Z, // pots are not digital buttons
 
   1,
   2,
@@ -192,24 +203,141 @@ void bt_maker(){
 
 
 
-
-
-
-
-void tester(){
-
-  Serial.print("button map");
-
+void sep(){
   
+  Serial.println("");
+  Serial.println("-------------------------------");
+  Serial.println("");
   
 }
 
 
 
 
+
+
+void an_builder(){
+  
+  // analog list
+  Serial.println("Analog");
+  sep();
+  
+  Serial.print("Axes");
+  Serial.print("||");
+  Serial.print("IDE PIN");
+  Serial.print("||");
+  Serial.print("State");
+  Serial.print("||");
+  sep();
+
+  for(int i=0; i <= el_num; i++){
+
+    if(bt[i].analog){
+
+      switch(bt[i].pad){
+
+        case X:
+          Serial.print("X");
+          Serial.print("||");
+          Serial.print(bt[i].number);
+          Serial.print("||");
+          Serial.print(bt[i].pull);
+          sep();
+          
+        case Y:
+          Serial.print("Y");
+          Serial.print("||");
+          Serial.print(bt[i].number);
+          Serial.print("||");
+          Serial.print(bt[i].pull);
+          sep();
+          
+        case Z:
+          Serial.print("Z");
+          Serial.print("||");
+          Serial.print(bt[i].number);
+          Serial.print("||");
+          Serial.print(bt[i].pull);
+          sep();
+
+        default:
+
+          Serial.print("axes");
+          Serial.print("||");
+          Serial.print("error");
+          Serial.print("||");
+          Serial.print("error");
+          sep();
+          
+      }
+    }
+  }
+}
+
+
+
+
+void dig_builder(){
+
+  // digital list
+  Serial.println("Digital");
+  sep();
+  
+  Serial.print("Buttons");
+  Serial.print("||");
+  Serial.print("IDE PIN");
+  Serial.print("||");
+  Serial.print("State");
+  Serial.print("||");
+  sep();
+  
+  
+  for(int i=0; i <= el_num; i++){
+  
+    if(!bt[i].analog){
+    
+      Serial.print(bt[i].pad);
+      Serial.print("||");
+      Serial.print(bt[i].number);
+      Serial.print("||");
+      
+      if(bt[i].pull == "up"){
+
+        Serial.print("up");
+        Serial.print("||");
+        
+      }else if(bt[i].pull == "down"){
+
+        Serial.print("down");
+        Serial.print("||");
+
+      }else if(bt[i].pull == "float"){
+      
+        Serial.print("float");
+        Serial.print("||");
+      
+      }else{
+
+        Serial.print("error");
+        Serial.print("||");
+      
+      }  
+  
+    }
+
+  }
+  
+
+}
+            
+      
+   
+
+
+
 void setup() {
 
-  DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
+  //DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
 
   Serial.begin(9600);
 
@@ -224,10 +352,14 @@ void setup() {
 
 void loop() {
   
-  
-  
-  
+    
+  Serial.println("button map");
+  sep();
 
+  an_builder();
 
-
+  dig_builder();
+  
+  delay(60000);
+  
 } 
