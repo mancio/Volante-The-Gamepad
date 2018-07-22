@@ -424,6 +424,8 @@ void loop() {
     Serial.println("is NOT a Leonardo");
   }
   
-  delay(60000);
-  
+  delay(2000);
+
+  sep();
+  sep();
 } 

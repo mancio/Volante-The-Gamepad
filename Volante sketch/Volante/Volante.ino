@@ -194,7 +194,7 @@ boolean analog_mask[18] = {
 // time limit
 long timer = 5000;
 // disengage hot key serching
-active = true;
+boolean active = true;
 
 // hot_key selected
 int hot_key;
@@ -331,7 +331,8 @@ long mapper(long m){
 
 boolean hot(){
 
-  if(millis() >= timer && millis() <= timer + 2000 && active){
+  long time_now = millis();
+  if(time_now >= timer && time_now <= timer + 2000 && active){
     active = false;
     return true;
   }
@@ -374,12 +375,15 @@ void loop() {
 
         case X:
           Joystick.setXAxis(mapper(analogRead(bt[i].number)));
+          break;
 
         case Y:
           Joystick.setYAxis(mapper(analogRead(bt[i].number)));
-
+          break;
+          
         case Z:
           Joystick.setZAxis(mapper(analogRead(bt[i].number)));
+          break;
           
       }
             
@@ -392,6 +396,12 @@ void loop() {
         Joystick.setButton(bt[i].pad, HIGH);
         if(hot()){
           hot_key = bt[i].pad;
+        }
+
+        if(hot_key == bt[i].pad){
+          while(debouncer(bt[i].number) == LOW){
+            Joystick.setZAxis(0);
+          }
         }
         
       }else{
@@ -413,6 +423,14 @@ void loop() {
         if(hot()){
           hot_key = bt[i].pad;
         }
+
+        if(hot_key == bt[i].pad){
+          while(debouncer(bt[i].number) == HIGH){
+            Joystick.setZAxis(0);
+          }
+        }
+
+        
       }
       
     }
