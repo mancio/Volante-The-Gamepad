@@ -244,7 +244,7 @@ boolean leo_check(){
           break;
         
         case Z:
-          Serial.print("Y ->");
+          Serial.print("Z ->");
           Serial.print("\t");
           Serial.print(bt[i].number);
           sep();
