@@ -191,6 +191,13 @@ boolean analog_mask[18] = {
   false // digital buttons
 };
 
+// time limit
+long timer = 5000;
+// disengage hot key serching
+active = true;
+
+// hot_key selected
+int hot_key;
 
 BUTTON bt[18]; // generate 18 buttons
 
@@ -322,10 +329,14 @@ long mapper(long m){
 }
 
 
-void tester(){
+boolean hot(){
 
-  
-  
+  if(millis() >= timer && millis() <= timer + 2000 && active){
+    active = false;
+    return true;
+  }
+
+  return false;
 }
 
 
@@ -379,7 +390,10 @@ void loop() {
       if(debouncer(bt[i].number) == LOW){
 
         Joystick.setButton(bt[i].pad, HIGH);
-      
+        if(hot()){
+          hot_key = bt[i].pad;
+        }
+        
       }else{
 
         Joystick.setButton(bt[i].pad, LOW);
@@ -396,7 +410,9 @@ void loop() {
       }else{
 
         Joystick.setButton(bt[i].pad, HIGH);
-      
+        if(hot()){
+          hot_key = bt[i].pad;
+        }
       }
       
     }
