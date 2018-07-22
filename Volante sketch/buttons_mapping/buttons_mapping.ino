@@ -2,10 +2,10 @@
  *  
  *  Button configuration tester  - for car and flight simulators, three axis (one slider and two knobs) and 15 buttons 
  *  
- *  Print on serial monitor the actual button configuration, usefull to configure the button array masks and export them to the main code.
+ *  Print on serial monitor the actual button configuration, useful to configure the button array masks and export them to the main code.
  *  Doesn't work as HID gamepad, show only text on Serial Monitor
  *  
- *   This program is free software: you can redistribute it and/or modify
+ *  This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -212,7 +212,60 @@ void sep(){
 }
 
 
+boolean leo_check(){
 
+  // leonardo IDE analog pin
+  int ide[8] = {18, 19, 20, 21};
+
+  int an[8] = {A0, A1, A2, A3};
+
+  Serial.print("Arduino Leonardo Pro Micro?");
+  sep();
+  
+
+   for(int i=0; i <= el_num; i++){
+
+    if(bt[i].analog){
+
+      switch(bt[i].pad){
+
+        case X:
+          Serial.print("X ->");
+          Serial.print("\t");
+          Serial.print(bt[i].number);
+          sep();
+          break;
+        
+        case Y:
+          Serial.print("Y ->");
+          Serial.print("\t");
+          Serial.print(bt[i].number);
+          sep();
+          break;
+        
+        case Z:
+          Serial.print("Y ->");
+          Serial.print("\t");
+          Serial.print(bt[i].number);
+          sep();
+          break;
+        
+                 
+      }
+    }
+  }
+
+  for(int i=0; i<=7; i++){
+
+    if(ide[i] != an[i]){
+      return false;
+    }
+     
+  }
+
+  return true;
+  
+}
 
 
 
@@ -243,7 +296,8 @@ void an_builder(){
           Serial.print("||");
           Serial.print(bt[i].pull);
           sep();
-          
+          break;
+        
         case Y:
           Serial.print("Y");
           Serial.print("||");
@@ -251,7 +305,8 @@ void an_builder(){
           Serial.print("||");
           Serial.print(bt[i].pull);
           sep();
-          
+          break;
+        
         case Z:
           Serial.print("Z");
           Serial.print("||");
@@ -259,15 +314,16 @@ void an_builder(){
           Serial.print("||");
           Serial.print(bt[i].pull);
           sep();
-
+          break;
+        
         default:
-
           Serial.print("axes");
           Serial.print("||");
           Serial.print("error");
           Serial.print("||");
           Serial.print("error");
           sep();
+          break;
           
       }
     }
@@ -322,6 +378,8 @@ void dig_builder(){
         Serial.print("||");
       
       }  
+
+      sep();
   
     }
 
@@ -359,6 +417,12 @@ void loop() {
   an_builder();
 
   dig_builder();
+
+  if(leo_check()){
+    Serial.println("is a Leonardo");
+  }else{
+    Serial.println("is NOT a Leonardo");
+  }
   
   delay(60000);
   
