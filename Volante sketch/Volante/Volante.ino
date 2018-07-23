@@ -66,6 +66,7 @@
  *  they are dirty inside. Open the metal cover and clean
  *  the part between the grafite and the brush
  *  
+ *  If the axies still vibrate, try to reduce the ohm capacity of the small capacitors to 1uF
  *  
  */
 
