@@ -47,9 +47,9 @@
  *  
  *  --- AXIS ---
  *  
- *  A0 = A0
- *  A1 = A1
- *  A2 = A2
+ *  A2 = X
+ *  A0 = Y
+ *  A1 = Z
  *  
  *  If potentiometers don't work properly probably 
  *  they are dirty inside. Open the metal cover and clean
@@ -66,9 +66,9 @@
 // print table times
 int pr_time = 1;
 
-int counter = 0;
 
 
+// the Button elements
 struct BUTTON {
 
   int number; // pin number in Arduino IDE
@@ -78,8 +78,11 @@ struct BUTTON {
 };
 
 
+
 int wiring[18] = {
 
+   // copy and paste here your button layout (the numbers in Arduino IDE)
+   
    A2, // steering
    A0, // alt
    A1, // gas analogic potentiometers pins
@@ -104,6 +107,8 @@ int wiring[18] = {
 
 int binding[18] = {
 
+  // copy and paste here your button layout (the numbers as they are recognized in Windows)
+
   X,
   Y,
   Z, // pots are not digital buttons
@@ -122,12 +127,19 @@ int binding[18] = {
   12,
   13,
   14,
-  15 // Arduino IDE pin number
+  15 
   
 };
 
 // "up" = pull-up, "down" = pull-down, "float" = float (not connected internally in case of extrenal pull resistors)
 String pull_mask[18] = {
+
+  /* copy and paste here your button layout (the state of the buttons)
+   * float = pin free pysically non connected 
+   * down = shorted to GND (pull-down resistor https://playground.arduino.cc/CommonTopics/PullUpDownResistor)
+   * up = shorted to +5V (pull-up resistor https://playground.arduino.cc/CommonTopics/PullUpDownResistor)
+   */
+  
 
   "float",
   "float",
@@ -152,6 +164,11 @@ String pull_mask[18] = {
 };
 
 boolean analog_mask[18] = {
+
+  /* copy and paste here your button layout (is this button or pot analog?)
+   *  true = analog (0-1023)
+   *  false = digital (0-1)
+   */
 
   true,
   true,
@@ -179,10 +196,6 @@ BUTTON bt[18]; // generate 18 buttons
 
 // the total number of digital buttons (starting from 0)
 int el_num = 17;
-
-
-
-
 
 
 
@@ -217,6 +230,7 @@ boolean leo_check(){
   // leonardo IDE analog pin
   int ide[8] = {18, 19, 20, 21};
 
+  // Input names on Leonardo board
   int an[8] = {A0, A1, A2, A3};
 
   Serial.print("Arduino Leonardo Pro Micro?");

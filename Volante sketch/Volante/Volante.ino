@@ -48,9 +48,19 @@
  *  
  *  --- AXIS ---
  *  
- *  A0 = A0
- *  A1 = A1
- *  A2 = A2
+ *  A2 = X
+ *  A0 = Y
+ *  A1 = Z
+ *  
+ *  The HOT KEY is the button that center the Z axis when keep pressed.
+ *  Is useful when the car lose control to free the wheels and keep control back. 
+ *  
+ *  To set the HOT KEY:
+ *  - disconnect Volante from PC
+ *  - keep pressed a digital button
+ *  - connect the USB cable
+ *  - wait more than 5 sec
+ *  - release the button
  *  
  *  If potentiometers don't work properly probably 
  *  they are dirty inside. Open the metal cover and clean
@@ -86,6 +96,7 @@ Joystick_ Joystick(
 );
 
 
+// the Button elements
 struct BUTTON {
 
   int number; // pin number in Arduino IDE
@@ -97,6 +108,8 @@ struct BUTTON {
 
 int wiring[18] = {
 
+   // copy and paste here your button layout (the numbers in Arduino IDE)
+   
    A2, // steering
    A0, // alt
    A1, // gas analogic potentiometers pins
@@ -121,6 +134,8 @@ int wiring[18] = {
 
 int binding[18] = {
 
+  // copy and paste here your button layout (the numbers as they are recognized in Windows)
+  
   X, // steering
   Y, // alt
   Z, // gas analogic potentiometers pins
@@ -146,6 +161,12 @@ int binding[18] = {
 // "up" = pull-up, "down" = pull-down, "float" = float (not connected internally in case of extrenal pull resistors)
 String pull_mask[18] = {
 
+  /* copy and paste here your button layout (the state of the buttons)
+   * float = pin free pysically non connected 
+   * down = shorted to GND (pull-down resistor https://playground.arduino.cc/CommonTopics/PullUpDownResistor)
+   * up = shorted to +5V (pull-up resistor https://playground.arduino.cc/CommonTopics/PullUpDownResistor)
+   */
+
   "float",
   "float",
   "float", // potentiometers
@@ -169,6 +190,11 @@ String pull_mask[18] = {
 };
 
 boolean analog_mask[18] = {
+
+  /* copy and paste here your button layout (is this button or pot analog?)
+   *  true = analog (0-1023)
+   *  false = digital (0-1)
+   */
 
   true,
   true,
@@ -328,7 +354,7 @@ long mapper(long m){
   
 }
 
-
+// true = the current button will become the hot-key (use a free button not used during the game)
 boolean hot(){
 
   long time_now = millis();
@@ -369,6 +395,7 @@ void loop() {
   // check every digital button
   for(int i=0; i <= el_num; i++){
 
+    // analog check
     if(bt[i].analog){
 
       switch(bt[i].pad){
@@ -387,20 +414,23 @@ void loop() {
           
       }
             
-      
+
+    /* digital up or float (float is externally pull-up so is the same case as up)
+     * remember to keep float the pin in the hw if the pin has an external pull-up resistor. The internal pull-up is between 20kΩ and 50kΩ
+     */
     }else if( (!bt[i].analog && bt[i].pull == "up") || (!bt[i].analog && bt[i].pull == "float")){
 
 
       if(debouncer(bt[i].number) == LOW){
 
-        Joystick.setButton(bt[i].pad, HIGH);
+        Joystick.setButton(bt[i].pad, HIGH); // High because the open switch is +5V and close is GND
         if(hot()){
-          hot_key = bt[i].pad;
+          hot_key = bt[i].pad; // this button become the hot_key button
         }
 
         if(hot_key == bt[i].pad){
           while(debouncer(bt[i].number) == LOW){
-            Joystick.setZAxis(0);
+            Joystick.setZAxis(0); // the Z axis is 0 (centered) untill the hot_key is pressed
           }
         }
         
@@ -410,7 +440,8 @@ void loop() {
       
       }
 
-            
+
+    // digital down        
     }else if(!bt[i].analog && bt[i].pull == "down"){
 
       if(debouncer(bt[i].number) == LOW){
