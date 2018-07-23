@@ -61,5 +61,17 @@ The joystick will provide a slider linear potentiometer (throttle/brake), two kn
 The difference from the past is the presence of _linear potentiometers_ that give the possibility to the player to be absolutely precice with the movements.
 
 #### Note
-Don't worry if is not totally clear... you are smart and perfect. This project is still under development.
+Don't worry if is not totally clear.... This project is still under development.
+
+&nbsp;
+
+#### Donation
+
+Studing, design and expecially prototiping is expensive. If you believe in my project you can help me :)
+
+Bitcoin 
+
+ETH
+
+Litecoin
 
