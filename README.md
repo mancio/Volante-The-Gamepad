@@ -67,11 +67,11 @@ Don't worry if is not totally clear.... This project is still under development.
 
 #### Donation
 
-Studing, design and expecially prototiping is expensive. If you believe in my project you can help me :)
+Study, design and prototiping is expensive. If you believe in my project you can help me :)
 
-Bitcoin 
+   - Bitcoin 1KB6oxVrh5P6SbwFdtNHSG1rqPmdsaTaDV
 
-ETH
+   - ETH 0x7a5b81b2174748d6573a9ebf6b16d07c634c3e4f
 
-Litecoin
+   - Litecoin LdVFaYbAsx9txhjVk1KURWvXqpVFDyT35k
 
