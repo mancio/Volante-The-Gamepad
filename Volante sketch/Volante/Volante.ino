@@ -227,6 +227,9 @@ boolean active = true;
 // hot_key selected
 int hot_key;
 
+// value of Z axis
+int z_pow = 0;
+
 // true = analog read zero (by sw)
 boolean fake_an = false;
 
@@ -419,7 +422,7 @@ void loop() {
           if(!fake_an){
             Joystick.setZAxis(mapper(analogRead(bt[i].number)));
           }else{
-            Joystick.setZAxis(0);
+            Joystick.setZAxis(z_pow);
           }
           break;
           
@@ -440,7 +443,7 @@ void loop() {
         }
 
         if(bt[i].is_hot){
-          fake_an = true;
+          fake_an = true; // I'm pressing the hot key
         }
         
       }else{
@@ -448,7 +451,7 @@ void loop() {
         Joystick.setButton(bt[i].pad, LOW);
 
         if(bt[i].is_hot){
-          fake_an = false;
+          fake_an = false; // I'm NOT pressing the hot key
         }
         
       }
