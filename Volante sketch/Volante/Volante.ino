@@ -104,6 +104,7 @@ struct BUTTON {
   int pad; // number on gamepad
   String pull; // pull-up, pull-down or float
   boolean analog; // yes or no?
+  boolean is_hot; // is this button the hot_key?
 };
 
 
@@ -226,6 +227,9 @@ boolean active = true;
 // hot_key selected
 int hot_key;
 
+// true = analog read zero (by sw)
+boolean fake_an = false;
+
 BUTTON bt[18]; // generate 18 buttons
 
 // the total number of digital buttons (starting from 0)
@@ -297,7 +301,7 @@ void bt_maker(){
     bt[i].pad = binding[i];
     bt[i].pull = pull_mask[i];
     bt[i].analog = analog_mask[i];
-      
+    bt[i].is_hot = false;  
   }
   
 }
@@ -370,6 +374,8 @@ boolean hot(){
 
 
 
+
+
 void setup() {
 
   DDRD &= ~(1<<5); // disable TXLED and RXLED (TXLED is always on if the USB is tranmitting data)
@@ -410,7 +416,11 @@ void loop() {
           break;
           
         case Z:
-          Joystick.setZAxis(mapper(analogRead(bt[i].number)));
+          if(!fake_an){
+            Joystick.setZAxis(mapper(analogRead(bt[i].number)));
+          }else{
+            Joystick.setZAxis(0);
+          }
           break;
           
       }
@@ -426,19 +436,21 @@ void loop() {
 
         Joystick.setButton(bt[i].pad, HIGH); // High because the open switch is +5V and close is GND
         if(hot()){
-          hot_key = bt[i].pad; // this button become the hot_key button
+          bt[i].is_hot = true; // this button become the hot_key button
         }
 
-        if(hot_key == bt[i].pad){
-          while(debouncer(bt[i].number) == LOW){
-            Joystick.setZAxis(0); // the Z axis is 0 (centered) untill the hot_key is pressed
-          }
+        if(bt[i].is_hot){
+          fake_an = true;
         }
         
       }else{
 
         Joystick.setButton(bt[i].pad, LOW);
-      
+
+        if(bt[i].is_hot){
+          fake_an = false;
+        }
+        
       }
 
 
@@ -448,21 +460,23 @@ void loop() {
       if(debouncer(bt[i].number) == LOW){
 
         Joystick.setButton(bt[i].pad, LOW);
+
+        if(bt[i].is_hot){
+          fake_an = false;
+        }
       
       }else{
 
         Joystick.setButton(bt[i].pad, HIGH);
         if(hot()){
-          hot_key = bt[i].pad;
+          bt[i].is_hot = true;
         }
 
-        if(hot_key == bt[i].pad){
-          while(debouncer(bt[i].number) == HIGH){
-            Joystick.setZAxis(0);
-          }
+        if(bt[i].is_hot){
+          fake_an = true;
         }
 
-        
+               
       }
       
     }
