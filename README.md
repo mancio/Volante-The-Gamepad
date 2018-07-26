@@ -78,7 +78,7 @@ Don't worry if is not totally clear.... This project is still under development.
 
 #### Donation
 
-Study, design and prototiping is expensive. If you believe in my project you can help me 😜 💲💲💲💲💲💲 😎
+Studying, designing and prototiping is expensive. If you believe in my project you can help me 😜 💲💲💲💲💲💲 😎
 
    - Bitcoin ```1KB6oxVrh5P6SbwFdtNHSG1rqPmdsaTaDV```
 
