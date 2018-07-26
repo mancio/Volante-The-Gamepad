@@ -29,10 +29,15 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
 
 4. [Volante sketch](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch) - the code
    
-   - [Volante](https://github.com/mancio/Volante-The-Gamepad/blob/master/Volante%20sketch/Volante/Volante.ino) - the main Arduino sketch. The sketch for the touch version of the Gamepad. The I/O pin are in PULLUP configuration. The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. The finger and each resistor on the shield should be considered as a voltage devider. Your body has an internal resistance of 100 KOhm so the resistors on the shield should be 2 MOhm. You can use [this](http://www.ohmslawcalculator.com/voltage-divider-calculator) voltage devider calculator to calculate the resistor. The Arduino pin mosfets are LOW state when the input is about <= 2.5V. If you use a less conductive item to close the contacts of the pad maybe you will have to raise the resistance up to 20MOhm
-   
-   <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG" width="200" height="200" />
+   - [Volante](https://github.com/mancio/Volante-The-Gamepad/blob/master/Volante%20sketch/Volante/Volante.ino) - the main Arduino sketch. The sketch is design to be used with touch, capacitive and push buttons. The I/O pin can be in PULL-UP, PULL-DOWN or FLOAT configuration. 
+      - The touch button design: The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. The finger and each resistor on the shield should be considered part of a voltage devider. Your dry skin shuold have an internal resistance of 2 MOhm so the resistors on the shield should be >= 10 MOhm. You can use [this](http://www.ohmslawcalculator.com/voltage-divider-calculator) voltage devider calculator to calculate the resistor value. The Arduino pin mosfets are LOW state when the input is about <= 2.5V. If you use a less conductive material to close the contacts of the pad maybe you will have to raise the resistance up to 20MOhm. Remeber that an high resistance voltage devider make the input *(dancing* 🎶 *)*. You will see the button blipping just by touching one side of the button pad. Please avoid to connect power cable to the laptop while playing or will act like an antenna. 🎶🎶🎶🎶💩...... I'm still studing how to debounce correctly a touch button made by using a voltage devider.
       
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touch_button_simple.PNG" width="200" height="200" />
+      *touch button pad (the resistors are on the shield)* 
+      &nbsp;
+      
+      - capacitive design: you can use the [TTP223](https://infusionsystems.com/support/TTP223.pdf) touch module 
       
    - [pin_test](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch/pin_test) - Used to check the buttons assignment. 
    
