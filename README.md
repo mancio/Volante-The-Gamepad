@@ -47,7 +47,7 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
       - classic push button design: you can set up NO (normally open push button) using a pull-up configuration to reduce bouncing effects. When you push the button the pin will be GND. This is the most simple configuration, the button will be very reactive but harder to trigger (the most of NO push buttons are hard to click)
       
       &nbsp;
-      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/NO_push.PNG" width="300" height="200" />
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/NO_push.PNG" width="250" height="150" />
       *NO Momentary push button for RC* 
       &nbsp;
       
@@ -73,11 +73,33 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
    
    - [shield](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/shield) - firrst shield design only for capacitive and push buttons
    
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb.jpg" width="250" height="200" />
+      *First PCB printed by OSH Park* 
+      &nbsp;
+      
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb_proto.PNG" width="250" height="200" />
+      *First PCB 3D view design by KiCad* 
+      &nbsp;
+   
    - [shield_touch](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/shield_touch) - second shield design with extaernal pull-up resistor for push, capacitive and touch buttons.
+   
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb2_front.jpg" width="250" height="300" />
+      *Second PCB printed by OSH Park and assembled manually* 
+      &nbsp;
+      
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb_smart.PNG" width="250" height="200" />
+      *Second PCB 3D view design by KiCad* 
+      &nbsp;
    
    - [touch_button_fancy](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_fancy) - alternative push button PCB design
    
    - [touch_button_simple](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_simple) - main push button PCB design
+   
+      
 
 ### Conclusion
 This project is focused to design a new kind of joystick that make pleasant the racing and flight simulation gaming experience.
