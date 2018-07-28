@@ -12,12 +12,14 @@ The new revolutionary joystick for car and flight simulation games.
 &nbsp;
 
 ### Software 
-The code use the famous libray ```Joystick.h```. You can find some sketches still in testing [here](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch).
-These are designed for the main project and for variants with different axis and buttons.
-From the first testing seem to work only the ```JOYSTICK_TYPE_JOYSTICK``` configuration. Unfortunately seem that Microsoft has stop to support the HID human interface and only the basic function works. Still no solution for force feedback and particular multiaxis joystick.... now the more complex gaming simulation devices have their own drivers. You don't need the basic plug and play driver. Please have a look for the [HID architecture](https://docs.microsoft.com/en-us/windows-hardware/drivers/hid/) to understand and maybe help :)
+The code is written by using the famous libray ```Joystick.h```. You can find some sketches still in testing [here](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch).
+After some tests seem that only the ```JOYSTICK_TYPE_JOYSTICK``` configuration works. Unfortunately Microsoft stop to support the HID human interface and only the basic function works. Still no solution for force feedback and particular multiaxis joystick.... now the more complex gaming simulation devices have their own drivers. You don't need the basic plug and play driver. Please have a look for the [HID architecture](https://docs.microsoft.com/en-us/windows-hardware/drivers/hid/) to understand and maybe help 😵
 
 ### Hardware
-The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micro](https://www.sparkfun.com/products/12640) and the the shield module to interface the Arduino with the buttons and knobs. The module board is designed by using [KiCad](http://kicad-pcb.org/). [Here](https://oshpark.com/shared_projects/UvrbzbYx) you can find the PCB ready to print. This super cool service is provided by OSHPark.
+The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](https://www.sparkfun.com/products/12640) and the the shield to interface the Arduino with the gamepad hw. The button pad modules and the shield boards are designed with [KiCad](http://kicad-pcb.org/). You can find on [OSH Park](https://oshpark.com) the PCBs ready to print.
+1. [First design - only push buttons](https://oshpark.com/shared_projects/Fl5pqxbd)
+2. [Second design - esternal pull-up resistors](https://oshpark.com/shared_projects/2LW72doK)
+
 
 
 ### Directory structure
@@ -74,7 +76,7 @@ The hardware consist in the joystick case, buttons, knobs, the [Arduino Pro Micr
    - [shield](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/shield) - firrst shield design only for capacitive and push buttons
    
       &nbsp;
-      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb.jpg" width="250" height="200" />
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/pcb.jpg" width="370" height="300" />
       *First PCB printed by OSH Park* 
       &nbsp;
       
