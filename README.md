@@ -101,6 +101,10 @@ The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](ht
    
    - [touch_button_simple](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_simple) - main push button PCB design
    
+### Facebook
+
+You can find my project on Facebook on [Andrea Mancini's Machines](https://www.facebook.com/pg/mancio.tech/photos/?tab=album&album_id=2003051576403796)
+   
       
 
 ### Conclusion
