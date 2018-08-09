@@ -108,8 +108,13 @@ How to set up the Volante for a Awesome gaming experience
 1. [Assetto corsa](https://www.assettocorsa.net/en/)
 
    &nbsp;
-   <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/assetto.jpg" width="1000" height="500" />
+   <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/assetto_sm.jpg" width="600" height="500" />
    *Main control configuration* 
+   &nbsp;
+   
+   &nbsp;
+   <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/assetto2_sm.jpg" width="600" height="500" />
+   *Steering settings* 
    &nbsp;
    
 ### Facebook
