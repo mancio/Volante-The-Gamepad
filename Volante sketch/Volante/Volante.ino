@@ -137,11 +137,13 @@ int wiring[18] = {
 int binding[18] = {
 
   // copy and paste here your button layout (the numbers as they are recognized in Windows)
+  // remember the joystick lib start counting from zero
   
   X, // steering
   Y, // alt
   Z, // gas analogic potentiometers pins
 
+  0,
   1,
   2,
   3,
@@ -155,8 +157,7 @@ int binding[18] = {
   11,
   12,
   13,
-  14,
-  15 // Arduino IDE pin number
+  14 // Arduino IDE pin number
   
 };
 
@@ -173,22 +174,22 @@ String pull_mask[18] = {
   "float",
   "float", // potentiometers
   
-  "down",
-  "down",
-  "down",
-  "down",
-  "down", // capacitive from button 1 to 5
+  "float",
+  "float",
+  "float",
+  "float",
+  "float", // capacitive from button 1 to 5
 
-  "up",
-  "up",
-  "up",
-  "up",
-  "up",
-  "up",
-  "up",
-  "up",
-  "up",
-  "up" // push buttons from 6 to 15
+  "float",
+  "float",
+  "float",
+  "float",
+  "float",
+  "float",
+  "float",
+  "float",
+  "float",
+  "float" // push buttons from 6 to 15
 };
 
 boolean analog_mask[18] = {
