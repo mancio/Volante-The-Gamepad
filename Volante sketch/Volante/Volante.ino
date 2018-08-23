@@ -96,6 +96,10 @@ Joystick_ Joystick(
   false // steering
 );
 
+// reverse X and Y axis - true = reversed
+bool rev_X = false; 
+bool rev_Y = false; 
+
 
 // the Button elements
 struct BUTTON {
@@ -357,10 +361,14 @@ void button_conf(){
 }
 
 // shift the potentiometer scale to reach negative value of the axis
-long mapper(long m){
+long mapper(long m, bool rev){
 
-  return map(m, 0, 1023, -1023, 1023);
-  
+  if(rev){
+    return map(m, 0, 1023, 1023, -1023);
+  }else if(!rev){
+    return map(m, 0, 1023, -1023, 1023);
+  }
+    
 }
 
 // true = the current button will become the hot-key (use a free button not used during the game)
@@ -412,16 +420,24 @@ void loop() {
       switch(bt[i].pad){
 
         case X:
-          Joystick.setXAxis(mapper(analogRead(bt[i].number)));
+          if(rev_X){
+            Joystick.setXAxis(mapper(analogRead(bt[i].number), true));
+          }else if(!rev_X){
+            Joystick.setXAxis(mapper(analogRead(bt[i].number), false));
+          }
           break;
 
         case Y:
-          Joystick.setYAxis(mapper(analogRead(bt[i].number)));
+          if(rev_Y){
+            Joystick.setYAxis(mapper(analogRead(bt[i].number), true));
+          }else if(!rev_Y){
+            Joystick.setYAxis(mapper(analogRead(bt[i].number), false));
+          }
           break;
           
         case Z:
           if(!fake_an){
-            Joystick.setZAxis(mapper(analogRead(bt[i].number)));
+            Joystick.setZAxis(mapper(analogRead(bt[i].number), false));
           }else{
             Joystick.setZAxis(z_pow);
           }
