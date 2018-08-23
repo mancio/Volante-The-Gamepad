@@ -8,18 +8,18 @@ The new revolutionary joystick for car and flight simulation games.
 <p align="center">
 <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/touchpad.jpg" width="550" height="400" />
 </p>   
+
 *prototype with home-made touch buttons*
-&nbsp;
 
 &nbsp;
 
 <p align="center">
 <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Picture/out_box.jpg" width="550" height="400" />
 </p>   
-*prototype with classic RC remote buttons*
+
 &nbsp;
 
-
+*prototype with classic RC remote buttons*
 
 ### Software 
 The code is written by using the famous libray ```Joystick.h```. You can find some sketches still in testing [here](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch).
