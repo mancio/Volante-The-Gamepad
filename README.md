@@ -127,6 +127,12 @@ How to set up the Volante for a Awesome gaming experience
    *Steering settings* 
    &nbsp;
    
+### Cars for Assetto Corsa
+
+To make the life easy to all the funs of the amazing game Assetto Corsa I decided to build my own cars (big tail and stick to the ground :red_car:). In the folder you find the game data and the blend file made with [blender](https://www.blender.org/)
+
+1. [Lotus GT Dream](https://github.com/mancio/Volante-The-Gamepad/tree/master/Assetto%20Corsa/Lotus%20GT%20Dream)
+   
 ### Facebook
 
 You can find my project on Facebook on [Andrea Mancini's Machines](https://www.facebook.com/pg/mancio.tech/photos/?tab=album&album_id=2003051576403796)
