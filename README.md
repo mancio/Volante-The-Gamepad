@@ -111,6 +111,10 @@ The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](ht
    - [touch_button_fancy](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_fancy) - alternative push button PCB design
    
    - [touch_button_simple](https://github.com/mancio/Volante-The-Gamepad/tree/master/kicad/touch_button_simple) - main push button PCB design
+
+6. [Assetto Corsa/Lotus GT Dream](https://github.com/mancio/Volante-The-Gamepad/tree/master/Assetto%20Corsa/Lotus%20GT%20Dream) - See *Cars for Assetto Corsa*
+
+7. [Gamepad 3d design](https://github.com/mancio/Volante-The-Gamepad/tree/master/Gamepad%203d%20design) - 3d model of the gamepad Volante
    
 ### Game Setup
 
