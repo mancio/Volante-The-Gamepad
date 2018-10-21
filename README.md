@@ -116,6 +116,11 @@ The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](ht
 6. [Assetto Corsa/Lotus GT Dream](https://github.com/mancio/Volante-The-Gamepad/tree/master/Assetto%20Corsa/Lotus%20GT%20Dream) - See *Cars for Assetto Corsa*
 
 7. [Gamepad 3d design](https://github.com/mancio/Volante-The-Gamepad/tree/master/Gamepad%203d%20design) - 3d model of the gamepad Volante
+
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Gamepad%203d%20design/box.png" width="370" height="300" />
+      *3D rendering plastic box* 
+      &nbsp;
    
 ### Game Setup
 
