@@ -42,7 +42,8 @@ The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](ht
 4. [Volante sketch](https://github.com/mancio/Volante-The-Gamepad/tree/master/Volante%20sketch) - the code
    
    - [Volante](https://github.com/mancio/Volante-The-Gamepad/blob/master/Volante%20sketch/Volante/Volante.ino) - the main Arduino sketch. The sketch is design to be used with touch, capacitive and push buttons. The I/O pin can be in PULL-UP, PULL-DOWN or FLOAT configuration. 
-      - touch button design: The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. The finger and each resistor on the shield should be considered part of a voltage devider. Your dry skin should have an internal resistance of 2 MOhm so the resistors on the shield should be >= 10 MOhm. You can use [this](http://www.ohmslawcalculator.com/voltage-divider-calculator) voltage devider calculator to calculate the resistor value. The Arduino pin mosfets are LOW state when the input is about <= 2.5V. If you use a less conductive material to close the contacts of the pad maybe you will have to raise the resistance up to 20MOhm. Remeber that an high resistance voltage devider make the input *(dancing* 🎶 *)*. You could see the button blipping when you touch the button pad (only one contact or both). This effect is usualy caused by the power supply cord (I'm testing on a laptop). To reduce this effect you should introduce a 10nF 103 cercamic capacitor between the input and the ground. The capacitor store a small charge when you press the button and release it very slowly due to the very high value resistors. This stop the flipping but introduce a small delay. You should try some caps between 100pF 101 - 100nF until your find the best compromise.
+      - touch button design: The PINs change to LOW when the finger or any not-hi-resistance organic object connect both the pad tracks. The finger and each resistor on the shield should be considered part of a voltage devider. Your dry skin should have an internal resistance of 2 MOhm so the resistors on the shield should be >= 10 MOhm. You can use [this](http://www.ohmslawcalculator.com/voltage-divider-calculator) voltage devider calculator to calculate the resistor value. The Arduino pin mosfets are LOW state when the input is about <= 2.5V. If you use a less conductive material to close the contacts of the pad maybe you will have to raise the resistance up to 20MOhm. Remeber that an high resistance voltage devider make the input *(dancing* 🎶 *)*. You could see the button blipping when you touch the button pad (only one contact or both). This effect is usualy caused by the power supply cord (I'm testing on a laptop). To reduce this effect you should a cercamic capacitor between the input and the ground. The capacitor store a small charge when you press the button and release it very slowly due to the very high value resistors. This stop the flipping but introduce a small delay. You should try some caps between 100pF (101 value) - 100nF (104 value) until your find the best compromise for your application. I suggest 10nF (103 value) capacitor.
+      
       [Here](https://www.tinkercad.com/things/0KRsWQPfhxv) Some experiments on ThinkerCad.
       
       &nbsp;
@@ -115,6 +116,11 @@ The hardware include a joystick case, buttons, knobs, the [Arduino Pro Micro](ht
 6. [Assetto Corsa/Lotus GT Dream](https://github.com/mancio/Volante-The-Gamepad/tree/master/Assetto%20Corsa/Lotus%20GT%20Dream) - See *Cars for Assetto Corsa*
 
 7. [Gamepad 3d design](https://github.com/mancio/Volante-The-Gamepad/tree/master/Gamepad%203d%20design) - 3d model of the gamepad Volante
+
+      &nbsp;
+      <img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Gamepad%203d%20design/box.png" width="370" height="300" />
+      *3D rendering plastic box* 
+      &nbsp;
    
 ### Game Setup
 
