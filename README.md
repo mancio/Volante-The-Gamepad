@@ -3,6 +3,26 @@ The new revolutionary joystick for car and flight simulation games.
 
 *(Design still in progress 😆)*
 
+
+&nbsp;
+
+<p align="center">
+<img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Gamepad%203d%20design/carbon_box.png" width="550" height="400" />
+</p>
+
+*carbon 3d preview*
+
+
+
+&nbsp;
+
+<p align="center">
+<img src="https://github.com/mancio/Volante-The-Gamepad/blob/master/Gamepad%203d%20design/box.png" width="550" height="400" />
+</p>
+
+*3d preview with classic ABS box*
+
+
 &nbsp;
 
 <p align="center">
