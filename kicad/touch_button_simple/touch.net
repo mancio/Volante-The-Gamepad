@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source C:/Users/mancio/Documents/GitHub/Volante-The-Gamepad/kicad/touch_buttons/touch.sch)
-    (date "22/05/2018 14:02:58")
-    (tool "Eeschema 4.0.7")
+    (source C:/Users/andrea.mancini/Documents/volante/Volante-The-Gamepad/kicad/touch_button_simple/touch.sch)
+    (date "12/16/2018 4:50:13 PM")
+    (tool "Eeschema 4.0.6")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -17,18 +17,19 @@
   (components
     (comp (ref JP1)
       (value touch)
-      (footprint Touch_conn:touch)
+      (footprint Touch_conn:touch_zig_pro)
       (libsource (lib device) (part Jumper_NO_Small))
       (sheetpath (names /) (tstamps /))
       (tstamp 5AF988CE))
     (comp (ref J1)
       (value CONN_01X02)
-      (footprint Touch_conn:touch_conn)
-      (libsource (lib touch-cache) (part CONN_01X02))
+      (footprint Touch_conn:touch_conn_cap)
+      (libsource (lib conn) (part CONN_01X02))
       (sheetpath (names /) (tstamps /))
       (tstamp 5B018E1F)))
   (libparts
-    (libpart (lib touch-cache) (part CONN_01X02)
+    (libpart (lib conn) (part CONN_01X02)
+      (description "Connector, single row, 01x02, pin header")
       (footprints
         (fp Pin_Header_Straight_1X*)
         (fp Pin_Header_Angled_1X*)
@@ -49,10 +50,10 @@
         (pin (num 1) (name 1) (type passive))
         (pin (num 2) (name 2) (type passive)))))
   (libraries
-    (library (logical touch-cache)
-      (uri C:\Users\mancio\Documents\GitHub\Volante-The-Gamepad\kicad\touch_buttons\touch-cache.lib))
     (library (logical device)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib")))
+      (uri C:\Users\andrea.mancini\Downloads\KiCadPortable\App\KiCad\share\kicad\library\device.lib))
+    (library (logical conn)
+      (uri C:\Users\andrea.mancini\Downloads\KiCadPortable\App\KiCad\share\kicad\library\conn.lib)))
   (nets
     (net (code 1) (name GND)
       (node (ref J1) (pin 2))

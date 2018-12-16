@@ -1,4 +1,12 @@
-Cmp-Mod V01 Created by PcbNew   date = 12/16/2018 4:23:39 PM
+Cmp-Mod V01 Created by PcbNew   date = 12/16/2018 4:28:54 PM
+
+BeginCmp
+TimeStamp = 5B040897
+Path = /5AF988CE
+Reference = JP1;
+ValeurCmp = touch;
+IdModule  = touch_zig_pro;
+EndCmp
 
 BeginCmp
 TimeStamp = 5B04087E
@@ -6,14 +14,6 @@ Path = /5B018E1F
 Reference = J1;
 ValeurCmp = CONN_01X02;
 IdModule  = touch_conn;
-EndCmp
-
-BeginCmp
-TimeStamp = 5B040897
-Path = /5AF988CE
-Reference = JP1;
-ValeurCmp = touch;
-IdModule  = Touch_conn:touch_zig_pro;
 EndCmp
 
 EndListe
